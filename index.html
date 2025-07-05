@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация в магазине обуви</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a8edea, #fed6e3),
+                url('https://images.unsplash.com/photo-1519744792095-2f2205e87b6f') center/cover no-repeat;
+            background-blend-mode: overlay;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 420px;
+            animation: slideIn 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .form-container label {
+            font-weight: 500;
+            margin-top: 10px;
+            display: block;
+            color: #444;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 15px;
+            background: #f1f1f1;
+            box-shadow: inset 2px 2px 6px #ccc, inset -2px -2px 6px #fff;
+            transition: all 0.2s ease;
+            font-size: 15px;
+        }
+
+        .form-container input:focus,
+        .form-container select:focus,
+        .form-container textarea:focus {
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 2px #333;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #111, #444);
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .form-container button:hover {
+            background: linear-gradient(135deg, #000, #222);
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                margin: 10px;
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Регистрация в магазине обуви</h2>
+        <form action="./info.php" method="POST">
+          <label>Фамилия</label>
+          <input type="text" name="user-name" placeholder="Александр" required>
+      
+          <label>Имя</label>
+          <input type="text" name="user-fomiliya" placeholder="Романов" required>
+      
+          <label>Отчество</label>
+          <input type="text" name="user-otchestvo" placeholder="Сергеевич">
+      
+          <label>Номер телефона</label>
+          <input type="tel" name="user-phone" placeholder="+998(XX) XXX-XX-XX" required>
+      
+          <label>Выберите тип обуви</label>
+          <select name="user-shoe_type" required>
+            <option disabled selected>Выберите</option>
+            <option>Кроссовки</option>
+            <option>Ботинки</option>
+            <option>Туфли</option>
+            <option>Сандалии</option>
+            <option>Другое</option>
+          </select>
+      
+          <label>Размер обуви</label>
+          <input type="number" name="user-size" min="0" max="500000000" placeholder="Например: 42" required>
+      
+          <label>Адрес доставки</label>
+          <textarea rows="3" name="user-address" placeholder="Город, улица, дом" required></textarea>
+      
+          <button type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+        </form>
+      </div>
+      
+      <style>
+      
+      </style>
+      
+</body>
+
+</html>
